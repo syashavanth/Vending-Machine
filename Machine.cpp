@@ -20,9 +20,12 @@ using namespace std;
 
 Machine::Machine() {
     num_of_items = 0;
-}
-
-Machine::Machine(const Machine& orig) {
+    
+    //collectingMoney = new CollectMoney(this);
+    //selectingItem = new SelectItem(this);
+    //dispensingItem = new DispenseItem(this);
+    //dispensingChange = new DispenseChange(this);
+    //noItems;
 }
 
 void Machine::refill()
@@ -82,6 +85,7 @@ void Machine::refill()
             else
             {
                 v->no_items+=no_items;
+                num_of_items+=no_items;
             }         
         }
         else 
@@ -91,6 +95,7 @@ void Machine::refill()
 
             pair<item_types,Products*> item(i,p);
             items.insert(item);
+            num_of_items += no_items;
             /*switch(ch)
             {
                 case 1: {

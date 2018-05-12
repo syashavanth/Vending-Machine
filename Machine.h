@@ -16,19 +16,31 @@
 #define MAX_CAPACITY 60
 #include "Products.h"
 #include <map>
+#include "MachineState.h"
 
 using namespace std;
 
 class Machine {
 public:
     Machine();
-    Machine(const Machine& orig);
     
     map<item_types, Products*> items;
     
     void refill();
     
     virtual ~Machine();
+    
+    MachineState* collectingMoney;
+    MachineState* selectingItem;
+    MachineState* dispensingItem;
+    MachineState* dispensingChange;
+    MachineState* noItems;
+    
+    float money;
+    
+    
+    
+    
     
 private:
     int num_of_items;
