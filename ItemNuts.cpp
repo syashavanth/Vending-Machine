@@ -5,29 +5,27 @@
  */
 
 /* 
- * File:   Candy.cpp
+ * File:   ItemNuts.cpp
  * Author: vardh
  * 
- * Created on May 10, 2018, 9:10 PM
+ * Created on May 12, 2018, 1:36 AM
  */
 
-#include "ItemCandy.h"
+#include "ItemNuts.h"
+#include "Products.h"
 #include "String.h"
 #include "iostream"
-
 using namespace std;
 
-ItemCandy::ItemCandy(int n,float v){
-    strcpy(name,"Candy");
+ItemNuts::ItemNuts(int n,float v) { 
+    strcpy(name,"Snack");
     value =v;
     no_items = n;
 }
-
-void ItemCandy::printDetails()
+void ItemNuts::printDetails()
 {
-    cout<<"Candies are tasty!"<<endl;
+    cout<<"Yummy Nuts!"<<endl;
+}
+ItemNuts::~ItemNuts() {
 }
 
-
-ItemCandy::~ItemCandy() {
-}

@@ -13,6 +13,8 @@
 
 #include "Products.h"
 #include "ItemCandy.h"
+#include "ItemSnack.h"
+#include "ItemNuts.h"
 
 using namespace std;
 Products::Products() {
@@ -32,6 +34,10 @@ Products* Products::createObject(item_types t,int n)
     {
         case 1: return new ItemCandy(n);
                 break;
+                
+        case 2: return new ItemSnack(n);
+        
+        case 3: return new ItemNuts(n);
 
     }
 }

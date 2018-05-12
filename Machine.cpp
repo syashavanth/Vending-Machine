@@ -86,7 +86,12 @@ void Machine::refill()
         }
         else 
         {
-            switch(ch)
+            cout<<"Adding new item"<<endl;
+            Products* p = Products::createObject(i,no_items);
+
+            pair<item_types,Products*> item(i,p);
+            items.insert(item);
+            /*switch(ch)
             {
                 case 1: {
                         cout<<"Adding new item"<<endl;
@@ -108,7 +113,7 @@ void Machine::refill()
                         
                 case 7: cout<<"Exiting"<<endl;
                         return;
-            }
+            }*/
         }
     }while(true);
 }

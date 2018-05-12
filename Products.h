@@ -26,9 +26,7 @@ public:
     float value;
     int no_items;
     
-    virtual bool setName()=0;
-    
-    //virtual bool setValue()=0;
+    virtual void printDetails()=0;
     
     static Products* createObject(item_types,int);
     

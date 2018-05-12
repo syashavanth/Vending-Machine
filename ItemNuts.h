@@ -5,31 +5,25 @@
  */
 
 /* 
- * File:   Candy.h
+ * File:   ItemNuts.h
  * Author: vardh
  *
- * Created on May 10, 2018, 9:10 PM
+ * Created on May 12, 2018, 1:36 AM
  */
 
-#ifndef CANDY_H
-#define CANDY_H
+#ifndef ITEMNUTS_H
+#define ITEMNUTS_H
 #include "Products.h"
-#include "String.h"
 
-using namespace std;
 
-class ItemCandy : public Products 
-{
+class ItemNuts : public Products{
 public:
-    ItemCandy(int = 1,float = 0.1f);
-    
-    virtual ~ItemCandy();
+    ItemNuts(int = 1,float = 0.9f);
     void printDetails();
-    //bool setValue();
-    
+    virtual ~ItemNuts();
 private:
 
 };
 
-#endif /* CANDY_H */
+#endif /* ITEMNUTS_H */
 
