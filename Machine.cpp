@@ -22,11 +22,14 @@ Machine::Machine() {
     num_of_items = 0;
     
     collectingMoney = new CollectMoney();
-    //selectingItem = new SelectItem(this);
+    selectingItem = new SelectItem();
     //dispensingItem = new DispenseItem(this);
     //dispensingChange = new DispenseChange(this);
     //noItems;
+    
+    VMstate = selectingItem;
 }
+
 
 void Machine::refill()
 {

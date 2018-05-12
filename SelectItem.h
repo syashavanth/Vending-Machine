@@ -5,30 +5,30 @@
  */
 
 /* 
- * File:   CollectMoney.h
+ * File:   SelectItem.h
  * Author: vardh
  *
- * Created on May 12, 2018, 4:33 PM
+ * Created on May 12, 2018, 5:40 PM
  */
 
-#ifndef COLLECTMONEY_H
-#define COLLECTMONEY_H
+#ifndef SELECTITEM_H
+#define SELECTITEM_H
 #include "MachineState.h"
 #include "Machine.h"
 
-class CollectMoney : public MachineState {
+class SelectItem : public MachineState {
 public:
-    CollectMoney();   
+    SelectItem();
+    
     void displayOptions();
     float getMoney();
     item_types chooseItem();
     void displayStatus();
     
-    virtual ~CollectMoney();
-
+    virtual ~SelectItem();
 private:
 
 };
 
-#endif /* COLLECTMONEY_H */
+#endif /* SELECTITEM_H */
 

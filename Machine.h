@@ -17,6 +17,7 @@
 #include <map>
 #include "MachineState.h"
 #include "CollectMoney.h"
+#include "SelectItem.h"
 
 using namespace std;
 
@@ -36,10 +37,10 @@ public:
     MachineState* dispensingChange;
     MachineState* noItems;
     
-    float money;
+    MachineState* VMstate;
     
     
-    
+    float money; 
     
     
 private:
