@@ -17,20 +17,20 @@
 
 using namespace std;
 
-ItemCandy::ItemCandy() {
+ItemCandy::ItemCandy(int n,float v){
     strcpy(name,"Candy");
-    value =0.5f;
+    value =v;
+    no_items = n;
 }
 
-ItemCandy::ItemCandy(char* n, float val)
-{
-   
-}
 
 bool ItemCandy::setName()
 {
     strcpy(name,"Candy");
     value = 0.5f;
 }
+
+
+
 ItemCandy::~ItemCandy() {
 }

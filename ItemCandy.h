@@ -14,15 +14,19 @@
 #ifndef CANDY_H
 #define CANDY_H
 #include "Products.h"
+#include "String.h"
+
+using namespace std;
 
 class ItemCandy : public Products 
 {
 public:
-    ItemCandy();
-    ItemCandy(char* n, float val);
+    ItemCandy(int = 1,float = 0.5f);
+    
     virtual ~ItemCandy();
     bool setName();
     //bool setValue();
+    
 private:
 
 };

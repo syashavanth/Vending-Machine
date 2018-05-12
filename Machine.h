@@ -31,6 +31,7 @@ public:
     virtual ~Machine();
     
 private:
+    int num_of_items;
     
 
 };

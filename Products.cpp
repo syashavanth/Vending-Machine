@@ -24,12 +24,13 @@ Products::Products(const Products& orig) {
 Products::~Products() {
 }
 
-Products* Products::createObject(item_types t)
+Products* Products::createObject(item_types t,int n)
 {
-    //return new object. need a switch case here.      
+    //return new object. need a switch case here.   
+    
     switch(t)
     {
-        case 1: return new ItemCandy();
+        case 1: return new ItemCandy(n);
                 break;
 
     }

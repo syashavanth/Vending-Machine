@@ -15,7 +15,7 @@
 #define PRODUCTS_H
 
 enum item_types {
-    Candy=1, Snack, Nuts, cOke, Pepsi, Gingerale
+    Candy=1, Snack, Nuts, cOke, Pepsi, Gingerale, NUM_ITEMS
 };
 class Products {
 public:
@@ -24,12 +24,13 @@ public:
     
     char name[10];
     float value;
+    int no_items;
     
     virtual bool setName()=0;
     
     //virtual bool setValue()=0;
     
-    static Products* createObject(item_types);
+    static Products* createObject(item_types,int);
     
     virtual ~Products();
 private:
