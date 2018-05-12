@@ -19,7 +19,7 @@ class MachineState {
 public:
     MachineState();
     virtual void displayOptions()=0;
-    virtual float collectMoney()=0;
+    virtual float getMoney()=0;
     virtual item_types chooseItem()=0;
     virtual void displayStatus()=0;
     

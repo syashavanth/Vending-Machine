@@ -13,10 +13,10 @@
 
 #ifndef MACHINE_H
 #define MACHINE_H
-#define MAX_CAPACITY 60
 #include "Products.h"
 #include <map>
 #include "MachineState.h"
+#include "CollectMoney.h"
 
 using namespace std;
 
