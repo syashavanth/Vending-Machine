@@ -21,8 +21,8 @@ using namespace std;
 Machine::Machine() {
     num_of_items = 0;
     
-    collectingMoney = new CollectMoney();
-    selectingItem = new SelectItem();
+    collectingMoney = new CollectMoney(this);
+    selectingItem = new SelectItem(this);
     //dispensingItem = new DispenseItem(this);
     //dispensingChange = new DispenseChange(this);
     //noItems;

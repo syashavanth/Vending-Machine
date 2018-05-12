@@ -16,9 +16,13 @@
 #include "MachineState.h"
 #include "Machine.h"
 
+class Machine;
+
 class SelectItem : public MachineState {
 public:
-    SelectItem();
+    Machine* vm;
+    
+    SelectItem(Machine*);
     
     void displayOptions();
     float getMoney();

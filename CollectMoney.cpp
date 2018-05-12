@@ -15,7 +15,9 @@
 #include "iostream"
 using namespace std;
 
-CollectMoney::CollectMoney(){
+CollectMoney::CollectMoney(Machine* m){
+    vm = m;
+    cout<<"Initialized Collect"<<endl;
 }
 
 CollectMoney::~CollectMoney() {

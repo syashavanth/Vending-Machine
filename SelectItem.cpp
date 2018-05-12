@@ -15,7 +15,9 @@
 #include "iostream"
 using namespace std;
 
-SelectItem::SelectItem() {
+SelectItem::SelectItem(Machine* m) {
+    vm=m;
+    cout<<"Initialized select state"<<endl;
 }
 
 void SelectItem :: displayOptions()
