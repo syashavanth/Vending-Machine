@@ -23,7 +23,7 @@ Machine::Machine() {
     
     collectingMoney = new CollectMoney(this);
     selectingItem = new SelectItem(this);
-    //dispensingItem = new DispenseItem(this);
+    dispensingItem = new DispenseItem(this);
     //dispensingChange = new DispenseChange(this);
     //noItems;
     
