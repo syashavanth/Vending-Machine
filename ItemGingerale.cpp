@@ -25,7 +25,12 @@ ItemGingerale::ItemGingerale(int n, float v)
 
 void ItemGingerale :: printDetails()
 {
-    cout<<"The healthier soft-drink!"<<endl;
+    cout<<endl;
+    cout<<" __________________________________"<<endl;
+    cout<<"(            Ginger-Ale            )"<<endl;
+    cout<<"(     The healthier soft-drink!    )"<<endl;
+    cout<<"(__________________________________)"<<endl;
+    cout<<endl;
 }
 
 ItemGingerale::~ItemGingerale() {

@@ -24,7 +24,11 @@ ItemNuts::ItemNuts(int n,float v) {
 }
 void ItemNuts::printDetails()
 {
-    cout<<"Yummy Nuts!"<<endl;
+    cout<<endl;
+    cout<<"--------------------------------------"<<endl;
+    cout<<"\\\\              Nuts              //"<<endl;
+    cout<<"//      Grab fun by the handful   \\\\"<<endl;
+    cout<<"--------------------------------------"<<endl<<endl;
 }
 ItemNuts::~ItemNuts() {
 }

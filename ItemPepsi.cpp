@@ -26,7 +26,12 @@ ItemPepsi::ItemPepsi(int n, float v)
 
 void ItemPepsi :: printDetails()
 {
-    cout<<"Taste the Difference!"<<endl;
+    cout<<endl;
+    cout<<" _____________________________"<<endl;
+    cout<<"(            Pepsi            )"<<endl;
+    cout<<"(     Taste the Difference    )"<<endl;
+    cout<<"(_____________________________)"<<endl;
+    cout<<endl;
 }
 
 ItemPepsi::~ItemPepsi() {

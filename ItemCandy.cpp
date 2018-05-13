@@ -14,6 +14,7 @@
 #include "ItemCandy.h"
 #include "String.h"
 #include "iostream"
+#include "stdio.h"
 
 using namespace std;
 
@@ -25,7 +26,12 @@ ItemCandy::ItemCandy(int n,float v){
 
 void ItemCandy::printDetails()
 {
-    cout<<"Candies are tasty!"<<endl;
+    cout<<endl;
+    cout<<"--------------------------------"<<endl;
+    cout<<"\\\\           Candy            //"<<endl;
+    cout<<"//      For the Kid in you.   \\\\"<<endl;
+    cout<<"--------------------------------"<<endl;
+    cout<<endl;
 }
 
 

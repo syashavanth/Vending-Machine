@@ -25,7 +25,12 @@ ItemCoke::ItemCoke(int n, float v)
 
 void ItemCoke :: printDetails()
 {
-    cout<<"Taste the Feeling!"<<endl;
+    cout<<endl;
+    cout<<" __________________________"<<endl;
+    cout<<"(           Coke           )"<<endl;
+    cout<<"(     Taste the Feeling    )"<<endl;
+    cout<<"(__________________________)"<<endl;
+    cout<<endl;
 }
 ItemCoke::~ItemCoke() {
 }

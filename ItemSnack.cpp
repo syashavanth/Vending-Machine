@@ -23,7 +23,12 @@ ItemSnack::ItemSnack(int n,float v){
 }
 void ItemSnack::printDetails()
 {
-    cout<<"Snacks are Healthy!";
+    cout<<endl;
+    cout<<"----------------------------------"<<endl;
+    cout<<"\\\\           Snack            //"<<endl;
+    cout<<"//         A Bite to eat      \\\\"<<endl;
+    cout<<"----------------------------------"<<endl;
+    cout<<endl;
 }
 ItemSnack::~ItemSnack() {
 }

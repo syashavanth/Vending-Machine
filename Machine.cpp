@@ -51,6 +51,32 @@ void Machine::refill()
     cout<<"Initializing the Vending Machine!"<<endl;
     int ch;
     int no_items;
+    
+    char full_refill;
+    cout<<"Refill completely ? [y/n]"<<endl;
+    cin>>full_refill;
+    
+    if(full_refill=='Y' || full_refill=='y')
+    {
+        for(int j=1; j<NUM_ITEMS; j++ )
+        {
+            item_types i = static_cast<item_types>(j);
+            if(items.find(i)!=items.end())
+            {
+                Products* v = items.at(i);
+                v->no_items = 10;
+            }
+            else
+            {
+                Products* p = Products::createObject(i,10);
+
+                pair<item_types,Products*> item(i,p);
+                items.insert(item);
+            }
+        }
+        return;
+    }
+    
     do
     {
         cout<<"Select the item you wish to refill:"<<endl;
@@ -106,7 +132,7 @@ void Machine::refill()
                 v->no_items+=no_items;
                 num_of_items+=no_items;
             }
-            cout<<"Number of "<<i<<" now present = ";
+            cout<<"Number of "<<v->name<<" now present = ";
             cout<<v->no_items<<endl;
         }
         else 

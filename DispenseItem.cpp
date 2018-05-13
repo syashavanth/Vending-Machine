@@ -61,7 +61,8 @@ void DispenseItem :: giveItem()
     Products *p = vm->items.at(vm->selected);
     
     p->no_items--;
-    cout<<"Item "<<vm->selected<<" dispensed."<<endl;
+    cout<<"Item "<<p->name<<" dispensed."<<endl;
+    p->printDetails();
 }
 
 void DispenseItem :: giveChange()
