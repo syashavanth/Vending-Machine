@@ -21,13 +21,16 @@ using namespace std;
 Machine::Machine() {
     num_of_items = 0;
     
+    refill();
     collectingMoney = new CollectMoney(this);
     selectingItem = new SelectItem(this);
     dispensingItem = new DispenseItem(this);
-    //dispensingChange = new DispenseChange(this);
-    //noItems;
+    noItems = new OutofStock(this);
     
     VMstate = selectingItem;
+    
+    VMstate->displayOptions();
+       
 }
 
 

@@ -34,10 +34,10 @@ float CollectMoney :: getMoney()
     return 0.0f;
 }
 
-item_types CollectMoney :: chooseItem()
+void CollectMoney :: chooseItem()
 {
     cout<<"item chosen";
-    return Candy;
+    
 }
 
 void CollectMoney :: displayStatus()

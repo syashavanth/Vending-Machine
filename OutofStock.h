@@ -5,35 +5,35 @@
  */
 
 /* 
- * File:   DispenseItem.h
+ * File:   OutofStock.h
  * Author: vardh
  *
- * Created on May 12, 2018, 7:11 PM
+ * Created on May 12, 2018, 8:35 PM
  */
 
-#ifndef DISPENSEITEM_H
-#define DISPENSEITEM_H
+#ifndef OUTOFSTOCK_H
+#define OUTOFSTOCK_H
 
 #include "MachineState.h"
 #include "Machine.h"
 
 class Machine;
 
-class DispenseItem : public MachineState {
+class OutofStock :public MachineState{
 public:
     Machine* vm;
     
-    DispenseItem(Machine*);
+    OutofStock(Machine*);
     
     void displayOptions();
     float getMoney();
     void chooseItem();
     void displayStatus();
     
-    virtual ~DispenseItem();
+    virtual ~OutofStock();
 private:
 
 };
 
-#endif /* DISPENSEITEM_H */
+#endif /* OUTOFSTOCK_H */
 

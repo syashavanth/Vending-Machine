@@ -26,7 +26,7 @@ public:
     
     void displayOptions();
     float getMoney();
-    item_types chooseItem();
+    void chooseItem();
     void displayStatus();
     
     virtual ~SelectItem();

@@ -30,7 +30,7 @@ float DispenseItem:: getMoney()
     
 }
 
-item_types DispenseItem:: chooseItem()
+void DispenseItem:: chooseItem()
 {
     
 }

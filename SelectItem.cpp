@@ -39,9 +39,24 @@ float SelectItem :: getMoney()
     
 }
 
-item_types SelectItem :: chooseItem()
+void SelectItem :: chooseItem()
 {
+    int ch;
+    cin>>ch;
     
+    item_types i = static_cast<item_types>(ch);
+    if(vm->items.find(i)!=vm->items.end())
+    {
+        cout<<"Item not present"<<endl;
+        vm->item_present = false;
+    }
+    else
+    {
+        vm->item_present = true;
+        vm->selected = i;
+        vm->VMstate=vm->collectingMoney;
+    }
+    vm->VMstate->displayOptions();
 }
 
 void SelectItem :: displayStatus()

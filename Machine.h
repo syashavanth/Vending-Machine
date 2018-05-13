@@ -18,6 +18,8 @@
 #include "MachineState.h"
 #include "CollectMoney.h"
 #include "SelectItem.h"
+#include "DispenseItem.h"
+#include "OutofStock.h"
 
 using namespace std;
 
@@ -26,6 +28,9 @@ public:
     Machine();
     
     map<item_types, Products*> items;
+
+    item_types selected;
+    bool item_present=false;
     
     void refill();
     
@@ -34,7 +39,6 @@ public:
     MachineState* collectingMoney;
     MachineState* selectingItem;
     MachineState* dispensingItem;
-    MachineState* dispensingChange;
     MachineState* noItems;
     
     MachineState* VMstate;

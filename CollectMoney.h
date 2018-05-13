@@ -23,7 +23,7 @@ public:
     CollectMoney(Machine*);   
     void displayOptions();
     float getMoney();
-    item_types chooseItem();
+    void chooseItem();
     void displayStatus();
     
     virtual ~CollectMoney();

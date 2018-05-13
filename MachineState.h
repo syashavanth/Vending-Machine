@@ -21,7 +21,7 @@ public:
     
     virtual void displayOptions()=0;
     virtual float getMoney()=0;
-    virtual item_types chooseItem()=0;
+    virtual void chooseItem()=0;
     virtual void displayStatus()=0;
     
     virtual ~MachineState();
