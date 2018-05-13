@@ -25,17 +25,30 @@ CollectMoney::~CollectMoney() {
 
 void CollectMoney :: displayOptions()
 {
-    
+    /*char c;
+    cout<<"Press X to cancel. O to continue"<<endl;
+    cin>>c;
+    if(c=='X'||c=='x')
+    {
+        vm->item_present = false;
+        vm->cancelled = true;
+        vm->VMstate = vm->dispensingItem;
+        return;
+    }*/
+
     cout<<"Money options:"<<endl;
-    cout<<"You may pay in [P]ennies, [N]ickels, [D]imes, [Q]uarters, [1$] Dollar bills and [2$] Two dollar bills"<<endl;
+    cout<<"You may pay in [P]ennies, [N]ickels, [D]imes, [Q]uarters, [1$] Dollar bills and [2$] Two dollar bills or [X] to Cancel and get a refund."<<endl;
     getMoney();
 }
 
 float CollectMoney :: getMoney()
 {
+    
     float mon=0.0f, cost;
     char c[3];
     cin>>c;
+    
+    c[0] = isalpha(c[0])?toupper(c[0]):c[0];
     
     switch(c[0])
     {
@@ -57,6 +70,12 @@ float CollectMoney :: getMoney()
         case '2': mon = 2.0f;
                   break;
                   
+        case 'X':{
+                    vm->item_present = false;
+                    vm->cancelled = true;
+                    vm->VMstate = vm->dispensingItem;
+                    return 0.0f;
+                 }
         default: cout<<"unacceptable denomination"<<endl;
     }
     
@@ -71,14 +90,14 @@ float CollectMoney :: getMoney()
     {
         char c;
         cout<<"Insufficient Money. Please feed more"<<endl;
-        cout<<"Press X to cancel. Anything else to continue"<<endl;
+        /*cout<<"Press X to cancel. Anything else to continue"<<endl;
         cin>>c;
         if(c=='X'||c=='x')
         {
             vm->item_present = false;
             vm->cancelled = true;
             vm->VMstate = vm->dispensingItem;
-        }
+        }*/
     }
 }
 

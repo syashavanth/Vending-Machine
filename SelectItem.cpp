@@ -14,6 +14,7 @@
 #include "SelectItem.h"
 #include "iostream"
 #include <map>
+#include <stdlib.h>
 //#include <conio.h>
 using namespace std;
 
@@ -24,14 +25,16 @@ SelectItem::SelectItem(Machine* m) {
 
 void SelectItem :: displayOptions()
 {
-    //clrscr();
-    cout<<"Select the item you wish to buy:"<<endl;
-    cout<<"1. Candy     $0.10"<<endl;
-    cout<<"2. Snack     $0.50"<<endl;
-    cout<<"3. Nuts      $0.90"<<endl;
-    cout<<"4. Coke      $0.25"<<endl;
-    cout<<"5. Pepsi     $0.35"<<endl;
-    cout<<"6. Gingerale $0.45"<<endl;
+    system("cls");
+    cout<<"############################################"<<endl;
+    cout<<"#     Select the item you wish to buy:     #"<<endl;
+    cout<<"#     1. Candy           $0.10             #"<<endl;
+    cout<<"#     2. Snack           $0.50             #"<<endl;
+    cout<<"#     3. Nuts            $0.90             #"<<endl;
+    cout<<"#     4. Coke            $0.25             #"<<endl;
+    cout<<"#     5. Pepsi           $0.35             #"<<endl;
+    cout<<"#     6. Ginger-ale      $0.45             #"<<endl;
+    cout<<"############################################"<<endl;
     //cout<<"7. Exit"<<endl;
     
     chooseItem();
@@ -58,7 +61,7 @@ void SelectItem :: chooseItem()
     cout<<"requested item = ";
     cout<<i<<endl;
     
-    if(vm->items.find(i)==vm->items.end()||vm->items.at(i)==0)//Check the at part!!!
+    if(vm->items.find(i)==vm->items.end()||vm->items.at(i)->no_items<=0)  //Check the at part!!!
     {
         cout<<"Item not present"<<endl;
         vm->item_present = false;
