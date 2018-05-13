@@ -29,7 +29,10 @@ Machine::Machine() {
     
     VMstate = selectingItem;
     
-    VMstate->displayOptions();
+    while(true)
+    {
+        VMstate->displayOptions();
+    }
        
 }
 

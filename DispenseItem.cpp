@@ -22,7 +22,8 @@ DispenseItem::DispenseItem(Machine* m) {
 
 void DispenseItem::displayOptions()
 {
-    
+    cout<<"Please collect your item and change"<<endl;
+    displayStatus();
 }
 
 float DispenseItem:: getMoney()
@@ -37,6 +38,17 @@ void DispenseItem:: chooseItem()
 
 void DispenseItem::displayStatus()
 {
+    Products *p = vm->items.at(vm->selected);
+    
+    p->no_items--;
+    cout<<"Item "<<vm->selected<<" dispensed."<<endl;
+    
+    float chg = vm->money - p->value;
+    cout<<"Change "<<chg<<" dispensed"<<endl;
+    
+    vm->money = 0.0f;
+    
+    vm->VMstate = vm->selectingItem;
     
 }
 

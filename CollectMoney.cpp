@@ -25,13 +25,26 @@ CollectMoney::~CollectMoney() {
 
 void CollectMoney :: displayOptions()
 {
-    cout<<"Money options";
+    
+    cout<<"Money options:"<<endl;
+    cout<<"You may pay in pennies, nickles, dimes, quarters, 1$ and 2$ bills"<<endl;
+    getMoney();
 }
 
 float CollectMoney :: getMoney()
 {
-    cout<<"Enter money";
-    return 0.0f;
+    float mon, cost;
+    cin>>mon;
+    cost = vm->items.at(vm->selected)->value;
+    vm->money += mon;
+    if(vm->money >= cost)
+    {
+        vm->VMstate = vm->dispensingItem;
+    }
+    else
+    {
+        cout<<"Insuffecient Money. Please feed more"<<endl;
+    }
 }
 
 void CollectMoney :: chooseItem()

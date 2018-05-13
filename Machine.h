@@ -31,8 +31,10 @@ public:
 
     item_types selected;
     bool item_present=false;
-    
+    bool money_suffecient = false;
+    bool admin = false;
     void refill();
+    float money=0.0f; 
     
     virtual ~Machine();
     
@@ -44,7 +46,7 @@ public:
     MachineState* VMstate;
     
     
-    float money; 
+    
     
     
 private:

@@ -22,7 +22,8 @@ OutofStock::OutofStock(Machine* m) {
 
 void OutofStock :: displayOptions()
 {
-    
+    cout<<"Sorry! we are out of "<<vm->selected;
+    vm->VMstate=vm->selectingItem;
 }
 
 float OutofStock :: getMoney()
@@ -32,12 +33,18 @@ float OutofStock :: getMoney()
 
 void OutofStock :: chooseItem()
 {
-    
+    if(vm->admin)
+    {
+        vm->refill();
+        vm->admin = false;
+        vm->VMstate = vm->selectingItem;
+       
+    }
 }
 
 void OutofStock :: displayStatus()
 {
-    
+    cout<<"Sorry! we are out of "<<vm->selected;
 }
 
 OutofStock::~OutofStock() {
