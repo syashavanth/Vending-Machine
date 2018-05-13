@@ -20,7 +20,7 @@ DispenseItem::DispenseItem(Machine* m) {
     //cout<<"Initialized dispense item state"<<endl;
 }
 
-void DispenseItem::displayOptions()
+void DispenseItem::displayMsg()
 {
     if(vm->cancelled)
     {
@@ -28,22 +28,22 @@ void DispenseItem::displayOptions()
     }
     else
     {
-        cout<<"Please collect your item and change"<<endl;
+        cout<<"Please collect your item and change."<<endl;
     }
-    displayStatus();
+    dispense();
 }
 
-float DispenseItem:: getMoney()
+void DispenseItem:: getMoney()
 {
-    
+    cout<<"Money recieved"<<endl;
 }
 
 void DispenseItem:: chooseItem()
 {
-    
+    cout<<"Item chosen"<<endl;
 }
 
-void DispenseItem::displayStatus()
+void DispenseItem::dispense()
 {
    
     if(vm->cancelled==false)

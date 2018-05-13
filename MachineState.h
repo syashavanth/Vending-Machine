@@ -19,10 +19,10 @@ class MachineState {
 public:
     MachineState();
     
-    virtual void displayOptions()=0;
-    virtual float getMoney()=0;
+    virtual void displayMsg()=0;
+    virtual void getMoney()=0;
     virtual void chooseItem()=0;
-    virtual void displayStatus()=0;
+    virtual void dispense()=0;
     
     virtual ~MachineState();
 private:

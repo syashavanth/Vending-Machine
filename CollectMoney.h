@@ -23,10 +23,10 @@ public:
    
     Machine* vm;
     CollectMoney(Machine*);   
-    void displayOptions();
-    float getMoney();
+    void displayMsg();
+    void getMoney();
     void chooseItem();
-    void displayStatus();
+    void dispense();
     
     virtual ~CollectMoney();
 

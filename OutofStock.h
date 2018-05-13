@@ -25,10 +25,10 @@ public:
     
     OutofStock(Machine*);
     
-    void displayOptions();
-    float getMoney();
+    void displayMsg();
+    void getMoney();
     void chooseItem();
-    void displayStatus();
+    void dispense();
     
     virtual ~OutofStock();
 private:

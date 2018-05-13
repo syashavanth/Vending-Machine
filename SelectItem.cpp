@@ -23,9 +23,9 @@ SelectItem::SelectItem(Machine* m) {
     //cout<<"Initialized select state"<<endl;
 }
 
-void SelectItem :: displayOptions()
+void SelectItem :: displayMsg()
 {
-    system("cls");
+    //system("clear");
     cout<<"############################################"<<endl;
     cout<<"#     Select the item you wish to buy:     #"<<endl;
     cout<<"#     1. Candy           $0.10             #"<<endl;
@@ -35,12 +35,11 @@ void SelectItem :: displayOptions()
     cout<<"#     5. Pepsi           $0.35             #"<<endl;
     cout<<"#     6. Ginger-ale      $0.45             #"<<endl;
     cout<<"############################################"<<endl;
-    //cout<<"7. Exit"<<endl;
     
     chooseItem();
 }
 
-float SelectItem :: getMoney()
+void SelectItem :: getMoney()
 {
     
 }
@@ -72,10 +71,10 @@ void SelectItem :: chooseItem()
         vm->selected = i;
         vm->VMstate=vm->collectingMoney;
     }
-    //vm->VMstate->displayOptions();
+   
 }
 
-void SelectItem :: displayStatus()
+void SelectItem :: dispense()
 {
     
 }

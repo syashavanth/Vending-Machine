@@ -24,10 +24,10 @@ public:
     
     SelectItem(Machine*);
     
-    void displayOptions();
-    float getMoney();
+    void displayMsg();
+    void getMoney();
     void chooseItem();
-    void displayStatus();
+    void dispense();
     
     virtual ~SelectItem();
 private:

@@ -25,10 +25,10 @@ public:
     
     DispenseItem(Machine*);
     
-    void displayOptions();
-    float getMoney();
+    void displayMsg();
+    void getMoney();
     void chooseItem();
-    void displayStatus();
+    void dispense();
     
     void giveItem();
     void giveChange();

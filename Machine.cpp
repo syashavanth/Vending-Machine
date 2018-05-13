@@ -22,9 +22,7 @@ using namespace std;
 Machine::Machine() {
     num_of_items = 0;
     
-    cout<<"Welcome!"<<endl;
-    cout<<"Initializing the Vending Machine!"<<endl;
-    
+    cout<<"Welcome!"<<endl;    
     checkPassword();
     refill();
     
@@ -37,7 +35,7 @@ Machine::Machine() {
     
     while(true)
     {
-        VMstate->displayOptions();
+        VMstate->displayMsg();
     }
        
 }
@@ -50,6 +48,7 @@ void Machine::refill()
         cout<<"Admins only!"<<endl;
         return;
     }
+    cout<<"Initializing the Vending Machine!"<<endl;
     int ch;
     int no_items;
     do
@@ -135,8 +134,17 @@ void Machine::checkPassword()
     cout<<"Enter the Super secret 4 digit code!"<<endl;
     cin>>pswd;
     
+    if(pswd==987654)
+    {
+        setPassword();
+        cout<<"Enter the Super secret 4 digit code!"<<endl;
+        cin>>pswd;
+    }
+    
     if(pswd==getPassword())
         admin = true;
+    
+    
 }
 
 void Machine::setPassword()

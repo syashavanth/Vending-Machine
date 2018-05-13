@@ -20,15 +20,15 @@ OutofStock::OutofStock(Machine* m) {
     //cout<<"OutofStock state"<<endl;
 }
 
-void OutofStock :: displayOptions()
+void OutofStock :: displayMsg()
 {
     cout<<"Sorry! we are out of "<<vm->selected;
     vm->VMstate=vm->selectingItem;
 }
 
-float OutofStock :: getMoney()
+void OutofStock :: getMoney()
 {
-    
+    cout<<"Sorry! we are out of "<<vm->selected;
 }
 
 void OutofStock :: chooseItem()
@@ -39,7 +39,7 @@ void OutofStock :: chooseItem()
     vm->VMstate = vm->selectingItem;
 }
 
-void OutofStock :: displayStatus()
+void OutofStock :: dispense()
 {
     cout<<"Sorry! we are out of "<<vm->selected;
 }
