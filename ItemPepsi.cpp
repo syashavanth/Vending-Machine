@@ -19,7 +19,7 @@ using namespace std;
 
 ItemPepsi::ItemPepsi(int n, float v) 
 { 
-    strcpy(name,"Coke");
+    strcpy(name,"Pepsi");
     value = v;
     no_items = n;
 }

@@ -18,7 +18,7 @@
 using namespace std;
 
 ItemNuts::ItemNuts(int n,float v) { 
-    strcpy(name,"Snack");
+    strcpy(name,"Nuts");
     value =v;
     no_items = n;
 }

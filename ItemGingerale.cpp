@@ -18,7 +18,7 @@ using namespace std;
 
 ItemGingerale::ItemGingerale(int n, float v) 
 { 
-    strcpy(name,"Coke");
+    strcpy(name,"Ginger-Ale");
     value = v;
     no_items = n;
 }
