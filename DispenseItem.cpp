@@ -22,7 +22,14 @@ DispenseItem::DispenseItem(Machine* m) {
 
 void DispenseItem::displayOptions()
 {
-    cout<<"Please collect your item and change"<<endl;
+    if(vm->cancelled)
+    {
+        cout<<"Canceled. Please collect your refund."<<endl;  
+    }
+    else
+    {
+        cout<<"Please collect your item and change"<<endl;
+    }
     displayStatus();
 }
 
@@ -38,18 +45,36 @@ void DispenseItem:: chooseItem()
 
 void DispenseItem::displayStatus()
 {
+   
+    if(vm->cancelled==false)
+        giveItem();
+    
+    giveChange();
+    
+    vm->VMstate = vm->selectingItem;
+    vm->cancelled = false;
+    
+}
+
+void DispenseItem :: giveItem()
+{
     Products *p = vm->items.at(vm->selected);
     
     p->no_items--;
     cout<<"Item "<<vm->selected<<" dispensed."<<endl;
+}
+
+void DispenseItem :: giveChange()
+{
+    Products *p = vm->items.at(vm->selected);
+    float chg;
+    if(vm->cancelled==false)
+        chg = vm->money - p->value;
+    else
+        chg = vm->money;
     
-    float chg = vm->money - p->value;
-    cout<<"Change "<<chg<<" dispensed"<<endl;
-    
+    cout<<"Change "<< chg <<" dispensed"<<endl;
     vm->money = 0.0f;
-    
-    vm->VMstate = vm->selectingItem;
-    
 }
 
 DispenseItem::~DispenseItem() {

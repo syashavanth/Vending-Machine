@@ -30,6 +30,9 @@ public:
     void chooseItem();
     void displayStatus();
     
+    void giveItem();
+    void giveChange();
+    
     virtual ~DispenseItem();
 private:
 

@@ -21,7 +21,12 @@ using namespace std;
 Machine::Machine() {
     num_of_items = 0;
     
+    cout<<"Welcome!"<<endl;
+    cout<<"Initializing the Vending Machine!"<<endl;
+    
+    checkPassword();
     refill();
+    
     collectingMoney = new CollectMoney(this);
     selectingItem = new SelectItem(this);
     dispensingItem = new DispenseItem(this);
@@ -39,6 +44,11 @@ Machine::Machine() {
 
 void Machine::refill()
 {
+    if(admin==false)
+    {
+        cout<<"Admins only!"<<endl;
+        return;
+    }
     int ch;
     int no_items;
     do
@@ -82,9 +92,9 @@ void Machine::refill()
                 
         if(items.find(i)!=items.end())
         {
-            cout<<"Number of items present = ";
+           
             Products* v = items.at(i);
-            cout<<v->no_items;
+            
             
             if((no_items+v->no_items)> MAX_CAPACITY)
             {
@@ -95,7 +105,9 @@ void Machine::refill()
             {
                 v->no_items+=no_items;
                 num_of_items+=no_items;
-            }         
+            }
+            cout<<"Number of "<<i<<" now present = ";
+            cout<<v->no_items<<endl;
         }
         else 
         {
@@ -105,31 +117,25 @@ void Machine::refill()
             pair<item_types,Products*> item(i,p);
             items.insert(item);
             num_of_items += no_items;
-            /*switch(ch)
-            {
-                case 1: {
-                        cout<<"Adding new item"<<endl;
-                        Products* p = Products::createObject(i,no_items);
-                        
-                        pair<item_types,Products*> item(i,p);
-                        items.insert(item);
-                        break;
-                        }
-                //case 2: break;
-                
-                //case 3: break;
-                
-                //case 4: break;
-                
-                //case 5: break;
-                
-                //case 6: break;
-                        
-                case 7: cout<<"Exiting"<<endl;
-                        return;
-            }*/
         }
     }while(true);
+    
+    admin = false;
+}
+
+int Machine::getPassword()
+{
+    return password;
+}
+
+void Machine::checkPassword()
+{
+    int pswd;
+    cout<<"Enter the Super secret 4 digit code!"<<endl;
+    cin>>pswd;
+    
+    if(pswd==getPassword())
+        admin = true;
 }
 Machine::~Machine() {
 }

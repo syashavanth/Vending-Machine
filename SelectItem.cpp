@@ -47,7 +47,6 @@ void SelectItem :: chooseItem()
     
     if(ch==0)//Super secret admin option
     {
-        vm->admin = true;
         vm->VMstate = vm->noItems;
         vm->VMstate->chooseItem();
         return;
@@ -68,7 +67,7 @@ void SelectItem :: chooseItem()
         vm->selected = i;
         vm->VMstate=vm->collectingMoney;
     }
-    vm->VMstate->displayOptions();
+    //vm->VMstate->displayOptions();
 }
 
 void SelectItem :: displayStatus()

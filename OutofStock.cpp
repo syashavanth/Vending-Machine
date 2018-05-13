@@ -33,13 +33,10 @@ float OutofStock :: getMoney()
 
 void OutofStock :: chooseItem()
 {
-    if(vm->admin)
-    {
-        vm->refill();
-        vm->admin = false;
-        vm->VMstate = vm->selectingItem;
-       
-    }
+    vm->checkPassword();
+    vm->refill();
+    
+    vm->VMstate = vm->selectingItem;
 }
 
 void OutofStock :: displayStatus()

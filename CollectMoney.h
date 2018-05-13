@@ -16,9 +16,11 @@
 #include "MachineState.h"
 #include "Machine.h"
 class Machine;
+  
 
 class CollectMoney : public MachineState {
 public:
+   
     Machine* vm;
     CollectMoney(Machine*);   
     void displayOptions();

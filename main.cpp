@@ -21,9 +21,6 @@ using namespace std;
 int main(int argc, char** argv) {
 
     Machine m;
-    
-    m.refill();
-    m.refill();
     return 0;
 }
 

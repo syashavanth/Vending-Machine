@@ -33,6 +33,7 @@ public:
     bool item_present=false;
     bool money_suffecient = false;
     bool admin = false;
+    bool cancelled = false;
     void refill();
     float money=0.0f; 
     
@@ -42,16 +43,15 @@ public:
     MachineState* selectingItem;
     MachineState* dispensingItem;
     MachineState* noItems;
-    
     MachineState* VMstate;
     
-    
-    
-    
-    
+    int getPassword();
+    void checkPassword();
+     
 private:
     int num_of_items;
-    
+    int password = 0;
+   
 
 };
 
