@@ -17,7 +17,7 @@ using namespace std;
 
 DispenseItem::DispenseItem(Machine* m) {
     vm=m;
-    cout<<"Initialized dispense item state"<<endl;
+    //cout<<"Initialized dispense item state"<<endl;
 }
 
 void DispenseItem::displayOptions()

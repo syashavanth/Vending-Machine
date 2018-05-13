@@ -14,6 +14,7 @@
 #include "Machine.h"
 #include "Products.h"
 #include "iostream"
+
 #define MAX_CAPACITY 10
 
 using namespace std;
@@ -137,6 +138,23 @@ void Machine::checkPassword()
     if(pswd==getPassword())
         admin = true;
 }
+
+void Machine::setPassword()
+{
+    checkPassword();
+    
+    if(admin)
+    {
+        cout<<"Select a new 4 digit Password that does not begin with 0."<<endl;
+        cin>>password;
+    }
+    else
+    {
+        cout<<"Only Admins can change password."<<endl;
+    }
+    admin=false;
+}
+
 Machine::~Machine() {
 }
 

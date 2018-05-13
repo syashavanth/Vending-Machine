@@ -17,7 +17,7 @@ using namespace std;
 
 OutofStock::OutofStock(Machine* m) {
     vm=m;
-    cout<<"OutofStock state"<<endl;
+    //cout<<"OutofStock state"<<endl;
 }
 
 void OutofStock :: displayOptions()

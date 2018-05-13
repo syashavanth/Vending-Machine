@@ -14,15 +14,17 @@
 #include "SelectItem.h"
 #include "iostream"
 #include <map>
+//#include <conio.h>
 using namespace std;
 
 SelectItem::SelectItem(Machine* m) {
     vm=m;
-    cout<<"Initialized select state"<<endl;
+    //cout<<"Initialized select state"<<endl;
 }
 
 void SelectItem :: displayOptions()
 {
+    //clrscr();
     cout<<"Select the item you wish to buy:"<<endl;
     cout<<"1. Candy     $0.10"<<endl;
     cout<<"2. Snack     $0.50"<<endl;

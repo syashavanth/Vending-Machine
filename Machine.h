@@ -47,10 +47,11 @@ public:
     
     int getPassword();
     void checkPassword();
+    void setPassword();
      
 private:
     int num_of_items;
-    int password = 0;
+    int password = 1234;
    
 
 };

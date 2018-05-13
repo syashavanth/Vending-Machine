@@ -17,7 +17,7 @@ using namespace std;
 
 CollectMoney::CollectMoney(Machine* m){
     vm = m;
-    cout<<"Initialized Collect"<<endl;
+    //cout<<"Initialized Collect"<<endl;
 }
 
 CollectMoney::~CollectMoney() {
