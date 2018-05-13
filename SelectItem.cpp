@@ -56,19 +56,27 @@ void SelectItem :: chooseItem()
         return;
     }
     
+    if(ch<0 || ch>=NUM_ITEMS)
+    {
+        cout<<"Invalid selection"<<endl;
+        return;
+    }
+    
     item_types i = static_cast<item_types>(ch);
     cout<<"requested item = ";
     cout<<i<<endl;
+    vm->selected = i;
+    
     
     if(vm->items.find(i)==vm->items.end()||vm->items.at(i)->no_items<=0)  //Check the at part!!!
     {
-        cout<<"Item not present"<<endl;
+        //cout<<"Item not present"<<endl;
         vm->item_present = false;
+        vm->VMstate = vm->noItems;
     }
     else
     {
         vm->item_present = true;
-        vm->selected = i;
         vm->VMstate=vm->collectingMoney;
     }
    

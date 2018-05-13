@@ -22,13 +22,16 @@ OutofStock::OutofStock(Machine* m) {
 
 void OutofStock :: displayMsg()
 {
-    cout<<"Sorry! we are out of "<<vm->selected;
+    if(!vm->item_present)
+    {
+        cout<<"Sorry! we are out of "<<vm->selected<<endl;
+    }
     vm->VMstate=vm->selectingItem;
 }
 
 void OutofStock :: getMoney()
 {
-    cout<<"Sorry! we are out of "<<vm->selected;
+    cout<<"Sorry! we are out of "<<vm->selected<<endl;
 }
 
 void OutofStock :: chooseItem()
