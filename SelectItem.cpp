@@ -1,28 +1,32 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   SelectItem.cpp
- * Author: vardh
+ * Represents the 1st state of the vending machine. 
+ * It is also the Idle state of the vending machine. 
  * 
- * Created on May 12, 2018, 5:40 PM
+ * When no item is selected and no money is inserted, Vending Machine is in this state. 
+ * 
+ * Functionalities:
+ * -----------------------
+ * 1. Displays a static menu from which the user can choose an item.
+ * 2. Records the selection.
+ * 3. If item is present, moves to "collectMoney" state. 
+ * 4. else, Moves to "out of stock" state. 
+ * 5. Also has a hidden option for admins to chose, incase of a refill needed. 
+ * 
  */
 
 #include "SelectItem.h"
 #include "iostream"
 #include <map>
 #include <stdlib.h>
-//#include <conio.h>
 using namespace std;
 
 SelectItem::SelectItem(Machine* m) {
     vm=m;
-    //cout<<"Initialized select state"<<endl;
 }
 
+/*
+ * Displays the menu. 
+ */
 void SelectItem :: displayMsg()
 {
     //system("clear");
@@ -39,11 +43,9 @@ void SelectItem :: displayMsg()
     chooseItem();
 }
 
-void SelectItem :: getMoney()
-{
-    
-}
-
+/*
+ * Records the selection and changes state. 
+ */
 void SelectItem :: chooseItem()
 {
     int ch;
@@ -68,9 +70,8 @@ void SelectItem :: chooseItem()
     vm->selected = i;
     
     
-    if(vm->items.find(i)==vm->items.end()||vm->items.at(i)->no_items<=0)  //Check the at part!!!
+    if(vm->items.find(i)==vm->items.end()||vm->items.at(i)->no_items<=0)
     {
-        //cout<<"Item not present"<<endl;
         vm->item_present = false;
         vm->VMstate = vm->noItems;
     }
@@ -82,10 +83,13 @@ void SelectItem :: chooseItem()
    
 }
 
-void SelectItem :: dispense()
-{
-    
-}
+void SelectItem::getMoney(){ 
+ //NOP   
+};
+
+void SelectItem::dispense(){
+ //NOP   
+};
 
 SelectItem::~SelectItem() {
 }

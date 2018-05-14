@@ -1,16 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Interface that represents states. 
+ * 
+ * Contains 4 functions which are overridden in the inherited classes. 
+ * 
  */
-
-/* 
- * File:   MachineState.h
- * Author: vardh
- *
- * Created on May 12, 2018, 2:02 PM
- */
-
 #ifndef MACHINESTATE_H
 #define MACHINESTATE_H
 #include "Products.h"

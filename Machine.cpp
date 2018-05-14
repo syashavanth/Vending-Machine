@@ -1,15 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Machine.cpp
- * Author: vardh
+ * Machine class: Used to drive the entire vending Machine. 
  * 
- * Created on May 10, 2018, 6:31 PM
- */
+ * Properties:
+ * --------------------
+ * 1. Can hold up to 10 items of a kind, currently 60 items in total.
+ * 2. Assume that it has enough change to dispense. 
+ * 3. Password protected.
+ * 
+ * Functionalities:
+ * --------------------
+ * 1. Accepts a selection from a variety of Products.
+ * 2. Accepts Money (Denominations: Pennies, Nickels, Dimes, 1$, 2$.
+ * 3. Dispenses Item and Change, or and Error Message and refund in case the user wishes to cancel.
+ * 4. Option to refill for an Admin. 
+ * 5. Admin needs a password to be authorized. 
+ * 6. Password can be changed by a admin.
+ * 
+ * Follows a state Design Pattern. 
+ * States:
+ * -------------------
+ * SelectItem: No item is selected, No money is in the machine. 
+ * CollectMoney: Item Selected, No Money is in the machine.
+ * Dispense: Item Selected, Money inserted. 
+ * noItem: Item selected, but not available. Or to refill. 
+ * 
+ *  */
 
 #include "Machine.h"
 #include "Products.h"
@@ -26,8 +41,8 @@ Machine::Machine() {
     checkPassword();
     refill();
     
-    collectingMoney = new CollectMoney(this);
     selectingItem = new SelectItem(this);
+    collectingMoney = new CollectMoney(this);
     dispensingItem = new DispenseItem(this);
     noItems = new OutofStock(this);
     
@@ -40,7 +55,14 @@ Machine::Machine() {
        
 }
 
-
+/* Function that is used to refill the items in the vending machine. 
+ * 
+ * Two refill options:
+ * 1. Refill completely. Upto 10 items per kind.
+ * 2. Refill individually items. 
+ * 
+ * Protects against overflow. 
+ */
 void Machine::refill()
 {
     if(admin==false)
@@ -112,7 +134,7 @@ void Machine::refill()
         }
         if(no_items<=0)
         {
-            cout<<"Invalid number of items "<<endl;
+            cout<<"Invalid number of items. Can only hold "<<MAX_CAPACITY<<" items of a kind"<<endl;
             continue;
         }
                 
@@ -124,7 +146,7 @@ void Machine::refill()
             
             if((no_items+v->no_items)> MAX_CAPACITY)
             {
-                cout<<"Overflow. Can't add "<<no_items<<endl;
+                cout<<"Overflow. Can't add. Can only hold "<<MAX_CAPACITY<<" items of a kind"<<endl<<"The number of items already in the machine are : "<<v->no_items<<endl;
                 continue;
             }
             else
@@ -149,11 +171,18 @@ void Machine::refill()
     admin = false;
 }
 
+/*
+ * Returns the vending machine password.
+ */
 int Machine::getPassword()
 {
     return password;
 }
 
+/*
+ * Checks the vending machine password.
+ * calls the function to reset the password also.
+ */
 void Machine::checkPassword()
 {
     int pswd;
@@ -170,9 +199,11 @@ void Machine::checkPassword()
     if(pswd==getPassword())
         admin = true;
     
-    
 }
 
+/*
+ * Resets the Password.
+ */
 void Machine::setPassword()
 {
     checkPassword();

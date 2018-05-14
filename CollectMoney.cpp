@@ -1,14 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   CollectMoney.cpp
- * Author: vardh
+ * Represents the state where a selection is made and money is not inserted. 
  * 
- * Created on May 12, 2018, 4:33 PM
+ * Functionalities:
+ * -----------------------
+ * 1. Displays accepted denominations and an option to cancel. 
+ * 2. Checks and accepts valid denominations. 
+ * 3. if inserted monet is suffecient for the chosen product, changes state to dispense
+ * 4. else, loops back and asks for more money or cancel options.
  */
 
 #include "CollectMoney.h"
@@ -23,6 +21,9 @@ CollectMoney::CollectMoney(Machine* m){
 CollectMoney::~CollectMoney() {
 }
 
+/*
+ * Displays a list of accepted denominations and an option to cancel.
+ */
 void CollectMoney :: displayMsg()
 {
     cout<<"Money options:"<<endl;
@@ -30,6 +31,11 @@ void CollectMoney :: displayMsg()
     getMoney();
 }
 
+/*
+ * Checks the denomination with accepted values.
+ * Accumulates money if it is valid. 
+ * Changes state to dispense if sufficient money is accumulated or if cancel is requested. 
+ */
 void CollectMoney :: getMoney()
 {
     
@@ -84,13 +90,12 @@ void CollectMoney :: getMoney()
 
 void CollectMoney :: chooseItem()
 {
-    cout<<"item chosen";
-    
+   //NOP
 }
 
 void CollectMoney :: dispense()
 {
-    cout<<"Money collected";
+   //NOP
 }
 
 

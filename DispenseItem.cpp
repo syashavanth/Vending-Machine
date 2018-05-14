@@ -1,14 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   DispenseItem.cpp
- * Author: vardh
+ * Represents the state where selection is made and Money is inserted. 
  * 
- * Created on May 12, 2018, 7:11 PM
+ * Functionalities:
+ * -----------------------
+ * 1. Checks if the request was canceled.
+ * 2. if canceled dispense the accepted money.
+ * 3. Else dispenses item and change. 
+ * 4. resets state to "selectItem" state.
  */
 
 #include "DispenseItem.h"
@@ -20,6 +18,9 @@ DispenseItem::DispenseItem(Machine* m) {
     //cout<<"Initialized dispense item state"<<endl;
 }
 
+/*
+ * Checks the cancel status and displays appropriate message.
+ */
 void DispenseItem::displayMsg()
 {
     if(vm->cancelled)
@@ -33,16 +34,10 @@ void DispenseItem::displayMsg()
     dispense();
 }
 
-void DispenseItem:: getMoney()
-{
-    cout<<"Money recieved"<<endl;
-}
-
-void DispenseItem:: chooseItem()
-{
-    cout<<"Item chosen"<<endl;
-}
-
+/*
+ * calls functions that dispense both item and change.
+ * Resets state to selectitem
+ */
 void DispenseItem::dispense()
 {
    
@@ -56,6 +51,9 @@ void DispenseItem::dispense()
     
 }
 
+/*
+ * Dispenses item.
+ */
 void DispenseItem :: giveItem()
 {
     Products *p = vm->items.at(vm->selected);
@@ -63,8 +61,12 @@ void DispenseItem :: giveItem()
     p->no_items--;
     cout<<"Item "<<p->name<<" dispensed."<<endl;
     p->printDetails();
+    
+    vm->item_present = false;
 }
-
+/*
+ * Dispenses change.
+ */
 void DispenseItem :: giveChange()
 {
     Products *p = vm->items.at(vm->selected);
@@ -76,6 +78,16 @@ void DispenseItem :: giveChange()
     
     cout<<"Change "<< chg <<" dispensed"<<endl;
     vm->money = 0.0f;
+}
+
+void DispenseItem:: getMoney()
+{
+    //NOP
+}
+
+void DispenseItem:: chooseItem()
+{
+    //NOP
 }
 
 DispenseItem::~DispenseItem() {

@@ -1,14 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   OutofStock.cpp
- * Author: vardh
+ * Represents a state where item is selected but not available. 
  * 
- * Created on May 12, 2018, 8:35 PM
+ * Functionalities:
+ * -----------------------
+ * 1. Displays the error message and changes state to "selectItem".
+ * 2. Also has the option to refill for the admin. 
  */
 
 #include "OutofStock.h"
@@ -31,20 +27,22 @@ void OutofStock :: displayMsg()
 
 void OutofStock :: getMoney()
 {
-    cout<<"Sorry! we are out of "<<vm->selected<<endl;
+    //NOP
 }
 
+/*
+ * Used to call refill. 
+ */
 void OutofStock :: chooseItem()
 {
     vm->checkPassword();
-    vm->refill();
-    
+    vm->refill();   
     vm->VMstate = vm->selectingItem;
 }
 
 void OutofStock :: dispense()
 {
-    cout<<"Sorry! we are out of "<<vm->selected;
+    //NOP
 }
 
 OutofStock::~OutofStock() {

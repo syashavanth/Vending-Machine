@@ -1,14 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Products.cpp
- * Author: vardh
- * 
- * Created on May 10, 2018, 8:40 PM
+ * Factory Design Pattern used for products.
+ * Abstract class with one static function which helps create the appropriate object. 
  */
 
 #include "Products.h"
@@ -30,9 +22,7 @@ Products::~Products() {
 }
 
 Products* Products::createObject(item_types t,int n)
-{
-    //return new object. need a switch case here.   
-    
+{    
     switch(t)
     {
         case 1: return new ItemCandy(n);
